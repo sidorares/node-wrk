@@ -12,7 +12,7 @@ function wrk(opts, callback) {
    if (opts.script)
      cmd += ' -s' + opts.script;
    if (opts.timeout)
-     cmd += ' --timeout' + opts.timeout;
+     cmd += ' --timeout ' + opts.timeout;
    if (opts.printLatency)
      cmd += ' --latency ';
    cmd += ' ' + opts.url;
