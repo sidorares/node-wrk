@@ -65,4 +65,3 @@ npm install wrk
 # license
 
 MIT
-https://github.com/wg/wrk
