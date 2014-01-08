@@ -1,5 +1,5 @@
 # node-wrk
-Prepare command line argiments and parse the output of the [wrk](https://github.com/wg/wrk) load testing tool
+Prepare command line arguments and parse the output of the [wrk](https://github.com/wg/wrk) load testing tool
 
 # example
 
