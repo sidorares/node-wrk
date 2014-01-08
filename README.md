@@ -53,6 +53,10 @@ Callback parameters: (err, wrkResults) where wrkResults is a hash with
   - rpsMax
   - rpsStdev
   - rpsStdevPerc
+  - connectErrors
+  - readErrors
+  - writeErrors
+  - timeoutErrors
 
 # install
 

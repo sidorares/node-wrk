@@ -25,10 +25,23 @@ function wrk(opts, callback) {
       var result = {};
       result.transferPerSec = lines[lines.length - 2].split(':')[1].trim()
       result.requestsPerSec = Number(lines[lines.length - 3].split(':')[1].trim())
-      var m = lines[lines.length - 4].match(/(\d+) requests in ([0-9\.]+[A-Za-z]+), ([0-9\.]+[A-Za]+)/);
+      
+      var errorsLine = 0;
+      var errorsRe = /Socket errors: connect (\d+), read (\d+), write (\d+), timeout (\d+)/;
+      var errorsMatch = lines[lines.length - 4].match(errorsRe);
+      if (errorsMatch) {
+        errorsLine = 1;
+        result.connectErrors = errorsMatch[1];
+        result.readErrors    = errorsMatch[2];
+        result.writeErrors   = errorsMatch[3];
+        result.timeoutErrors = errorsMatch[4];
+      }
+ 
+      var m = lines[lines.length - 4 - errorsLine].match(/(\d+) requests in ([0-9\.]+[A-Za-z]+), ([0-9\.]+[A-Za]+)/);
       result.requestsTotal  = Number(m[1]);
       result.durationActual = m[2];
       result.transferTotal  = m[3];
+
       var latencyMinMax   = lines[3].split(/[\t ]+/);
       result.latencyAvg   = latencyMinMax[2];
       result.latencyStdev = latencyMinMax[3];
