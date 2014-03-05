@@ -66,6 +66,9 @@ With [npm](https://npmjs.org) do:
 npm install wrk
 ```
 
+# see also
+[HTTPerf.js](https://github.com/jmervine/httperfjs)
+
 # license
 
 MIT
