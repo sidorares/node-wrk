@@ -1,6 +1,6 @@
 {
   "name": "wrk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "wrk load test tool wrapper and output parser",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "url": "https://github.com/sidorares/node-wrk"
   },
   "keywords": [
-    "wrk", "load test"
+    "wrk",
+    "load test"
   ],
   "author": "Andrey Sidorov <sidorares@yandex.ru>",
   "license": "MIT"
