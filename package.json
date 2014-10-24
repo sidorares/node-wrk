@@ -1,6 +1,6 @@
 {
   "name": "wrk",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "wrk load test tool wrapper and output parser",
   "main": "index.js",
   "scripts": {
