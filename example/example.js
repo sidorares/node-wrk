@@ -1,11 +1,12 @@
 var wrk = require('../index.js');
 
 wrk({
-  threads: 10,
-  connections: n+1,
-  duration: '10s',
+  threads: 2,
+  connections: 5,
+  duration: '2s',
   printLatency: true,
-  url: 'http://localhost:3000/test'
+  url: 'http://localhost:5000/explody',
+  debug: true
 }, function(err, out) {
    console.log(out)
 });

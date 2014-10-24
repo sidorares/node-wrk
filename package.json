@@ -4,7 +4,7 @@
   "description": "wrk load test tool wrapper and output parser",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "./node_modules/.bin/tap test/*.tap.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,21 @@
     "load test"
   ],
   "author": "Andrey Sidorov <sidorares@yandex.ru>",
-  "license": "MIT"
+  "contributors": [
+    "Wraithan <xwraithanx@gmail.com> (http://wraithan.net)"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "tap": "^0.4.13"
+  },
+  "bugs": {
+    "url": "https://github.com/sidorares/node-wrk/issues"
+  },
+  "homepage": "https://github.com/sidorares/node-wrk",
+  "directories": {
+    "lib": "lib",
+    "test": "test",
+    "example": "example"
+  },
+  "dependencies": {}
 }
