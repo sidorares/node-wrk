@@ -4,7 +4,7 @@
   "description": "wrk load test tool wrapper and output parser",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/tap test/*.tap.js"
+    "test": "tap test/*.tap.js"
   },
   "repository": {
     "type": "git",
