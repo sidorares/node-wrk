@@ -1,5 +1,6 @@
 var exec = require('child_process').exec;
 var parseWrk = require('./lib/parseWrk');
+var util = require("util");
 
 function wrk(opts, callback) {
   var cmd = opts.path || 'wrk';
@@ -17,10 +18,9 @@ function wrk(opts, callback) {
   if (opts.printLatency)
     cmd += ' --latency ';
   if (opts.headers) {
-    for (var key in opts.headers) {
-      if (opts.headers.hasOwnProperty(key))
-        cmd += ' -H ' + `'${key}: ${opts.headers[key]}'`;
-    }
+    Object.keys(opts.headers).forEach(function(key) {
+      cmd += util.format(' -H  \'%s: %s\'', key,  opts.headers[key]);
+    })
   }
 
   cmd += ' ' + opts.url;
