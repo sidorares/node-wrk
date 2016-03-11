@@ -1,9 +1,8 @@
 var exec = require('child_process').exec;
-var parseWrk = require('./lib/parseWrk')
+var parseWrk = require('./lib/parseWrk');
 
 function wrk(opts, callback) {
-
-  var cmd = opts.path || 'wrk';
+    var cmd = opts.path || 'wrk';
 
   if (opts.threads)
     cmd += ' -t' + opts.threads;
@@ -17,7 +16,10 @@ function wrk(opts, callback) {
     cmd += ' --timeout ' + opts.timeout;
   if (opts.printLatency)
     cmd += ' --latency ';
-  cmd += ' ' + opts.url;
+  if(opts.headers && opts.headers.length)
+    cmd += ' -H ' + opts.headers.join(' -H ');
+
+    cmd += ' ' + opts.url;
 
   var child = exec(cmd, function(error, stdout, stderr) {
     if (opts.debug) {
@@ -47,4 +49,4 @@ module.exports.co = function(opts) {
   return function(callback) {
     wrk(opts, callback);
   }
-}
+};
