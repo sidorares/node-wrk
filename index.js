@@ -2,7 +2,7 @@ var exec = require('child_process').exec;
 var parseWrk = require('./lib/parseWrk');
 
 function wrk(opts, callback) {
-    var cmd = opts.path || 'wrk';
+  var cmd = opts.path || 'wrk';
 
   if (opts.threads)
     cmd += ' -t' + opts.threads;
@@ -16,10 +16,14 @@ function wrk(opts, callback) {
     cmd += ' --timeout ' + opts.timeout;
   if (opts.printLatency)
     cmd += ' --latency ';
-  if(opts.headers && opts.headers.length)
-    cmd += ' -H ' + opts.headers.join(' -H ');
+  if (opts.headers) {
+    for (var key in opts.headers) {
+      if (opts.headers.hasOwnProperty(key))
+        cmd += ' -H ' + `'${key}: ${opts.headers[key]}'`;
+    }
+  }
 
-    cmd += ' ' + opts.url;
+  cmd += ' ' + opts.url;
 
   var child = exec(cmd, function(error, stdout, stderr) {
     if (opts.debug) {
