@@ -15,6 +15,8 @@ function wrk(opts, callback) {
     cmd += ' -s' + opts.script;
   if (opts.timeout)
     cmd += ' --timeout ' + opts.timeout;
+  if (opts.rate)
+    cmd += ' -R' + opts.rate;
   if (opts.printLatency)
     cmd += ' --latency ';
   if (opts.headers) {
