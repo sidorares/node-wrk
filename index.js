@@ -30,23 +30,13 @@ function wrk(opts, callback) {
   var child = exec(cmd, function(error, stdout, stderr) {
     if (opts.debug) {
       console.log('stdout:\n', stdout);
-      console.log('stderr:\n', stderr);
+      console.error('stderr:\n', stderr);
     }
     if (error) {
       return callback(error);
     }
 
     callback(null, parseWrk(stdout));
-  });
-
-  child.on('close', function(code, signal) {
-    if (code === null) {
-      return callback(new Error('killed by signal: %s', signal));
-    }
-
-    if (code !== 0) {
-      return callback(new Error('died with exit code: %s', code));
-    }
   });
 }
 
