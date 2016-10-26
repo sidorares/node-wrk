@@ -21,6 +21,7 @@ function benchmark() {
     connections: conns,
     duration: '10s',
     printLatency: true,
+    headers: { cookie: 'JSESSIONID=abcd' },
     url: 'http://localhost:3000/'
   }, function(err, out) {
      results.push(out);
@@ -35,6 +36,7 @@ Options:
   - `connections`
   - `duration`
   - `printLatency`
+  - `headers`: object with additional request headers
   - `url`: target url
   - `path`: path to wrk binary (default is "wrk")
   - `debug`: print the output of `wrk` to stdout
