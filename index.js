@@ -26,11 +26,11 @@ function wrk(opts, callback) {
   }
 
   cmd += ' ' + opts.url;
-
+  opts.debug && console.log(cmd);
   var child = exec(cmd, function(error, stdout, stderr) {
     if (opts.debug) {
-      console.log('stdout:\n', stdout);
-      console.error('stderr:\n', stderr);
+      console.log(stdout);
+      console.error(stderr);
     }
     if (error) {
       return callback(error);
