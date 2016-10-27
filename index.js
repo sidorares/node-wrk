@@ -29,8 +29,8 @@ function wrk(opts, callback) {
   opts.debug && console.log(cmd);
   var child = exec(cmd, function(error, stdout, stderr) {
     if (opts.debug) {
-      console.log(stdout);
-      console.error(stderr);
+      stdout && console.log(stdout);
+      stderr && console.error(stderr);
     }
     if (error) {
       return callback(error);
