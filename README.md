@@ -1,4 +1,5 @@
 # node-wrk
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/sidorares/node-wrk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Prepare command line arguments and parse the output of the
 [wrk](https://github.com/wg/wrk) load testing tool
