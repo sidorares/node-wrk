@@ -1,5 +1,7 @@
 # node-wrk
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sidorares/node-wrk.svg)](https://greenkeeper.io/)
+
 Prepare command line arguments and parse the output of the
 [wrk](https://github.com/wg/wrk) load testing tool
 
