@@ -20,7 +20,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "tap": "^0.4.13"
+    "tap": "^10.3.2"
   },
   "bugs": {
     "url": "https://github.com/sidorares/node-wrk/issues"
