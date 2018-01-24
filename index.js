@@ -25,9 +25,12 @@ function wrk(opts, callback) {
     })
   }
 
+  // the caller may have requested that we pass options to the exec
+  const { execOptions={} } = opts
+
   cmd += ' ' + opts.url;
   opts.debug && console.log(cmd);
-  var child = exec(cmd, function(error, stdout, stderr) {
+  var child = exec(cmd, execOptions, function(error, stdout, stderr) {
     if (opts.debug) {
       stdout && console.log(stdout);
       stderr && console.error(stderr);
