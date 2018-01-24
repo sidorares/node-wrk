@@ -40,6 +40,7 @@ Options:
   - `url`: target url
   - `path`: path to wrk binary (default is "wrk")
   - `debug`: print the output of `wrk` to stdout
+  - `execOptions`: options that will be directly passed through to the `child_process.exec` of wrk
 
 Callback parameters: (err, wrkResults)
 
