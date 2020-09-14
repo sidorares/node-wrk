@@ -1,4 +1,4 @@
-var exec = require('child_process').exec;
+var execFile = require('child_process').execFile;
 var parseWrk = require('./lib/parseWrk');
 var util = require("util");
 
@@ -30,7 +30,8 @@ function wrk(opts, callback) {
 
   cmd += ' ' + opts.url;
   opts.debug && console.log(cmd);
-  var child = exec(cmd, execOptions, function(error, stdout, stderr) {
+  cmd = cmd.split(' ')
+  var child = execFile(cmd[0], cmd.splice(1), execOptions, function(error, stdout, stderr) {
     if (opts.debug) {
       stdout && console.log(stdout);
       stderr && console.error(stderr);
