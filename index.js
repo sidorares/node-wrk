@@ -28,7 +28,7 @@ function wrk(opts, callback) {
   // the caller may have requested that we pass options to the exec
   const { execOptions={} } = opts
 
-  cmd += ' ' + opts.url;
+  cmd +=  opts.url;
   opts.debug && console.log(cmd);
   cmd = cmd.split(' ')
   var child = execFile(cmd[0], cmd.splice(1), execOptions, function(error, stdout, stderr) {
